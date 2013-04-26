@@ -3,6 +3,7 @@ package de.clubi.recipe
 import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
+@Secured(["ADMNIN_ROLE", "USER_ROLE"])
 class RecipeController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -11,7 +12,6 @@ class RecipeController {
         redirect(action: "list", params: params)
     }
 
-    @Secured(["ROLE_ADMIN"])
     def list(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         [recipeInstanceList: Recipe.list(params), recipeInstanceTotal: Recipe.count()]
