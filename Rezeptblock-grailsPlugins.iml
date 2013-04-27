@@ -6,6 +6,7 @@
         <webroots>
           <root url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/database-migration-1.3.2/grails-app/views" relative="/" />
           <root url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/jquery-1.8.3/web-app" relative="/" />
+          <root url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/web-app" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>
@@ -43,6 +44,13 @@
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/resources-1.1.6/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/resources-1.1.6/grails-app/taglib" isTestSource="false" />
     </content>
+    <content url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8">
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/src/groovy" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/grails-app/controllers" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/grails-app/taglib" isTestSource="false" />
+    </content>
     <content url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/spring-security-core-1.2.7.3">
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/spring-security-core-1.2.7.3/src/java" isTestSource="false" />
       <sourceFolder url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/spring-security-core-1.2.7.3/src/groovy" isTestSource="false" />
@@ -62,9 +70,11 @@
         <CLASSES>
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.security/spring-security-web/jars/spring-security-web-3.0.7.RELEASE.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.springframework.security/spring-security-core/jars/spring-security-core-3.0.7.RELEASE.jar!/" />
+          <root url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$USER_HOME$/.grails/2.2.1/projects/Rezeptblock/plugins/richui-0.8/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>

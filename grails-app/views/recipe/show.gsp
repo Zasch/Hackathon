@@ -100,10 +100,8 @@
 					<span id="pictures-label" class="property-label"><g:message code="recipe.pictures.label" default="Pictures" /></span>
 					
 						<g:each in="${recipeInstance.pictures}" var="p">
-                            <img src="${createLinkTo(dir: "images/Rezeptbilder", file: p.fileName)}" alt="Bild" />
-						    %{--<span class="property-value" aria-labelledby="pictures-label">--}%
-                                %{--<g:link controller="picture" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link>--}%
-                            %{--</span>--}%
+						<span class="property-value" aria-labelledby="pictures-label">
+                            <g:link controller="picture" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
 						</g:each>
 					
 				</li>
