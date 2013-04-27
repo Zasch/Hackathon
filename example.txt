@@ -1,0 +1,24 @@
+Description of folders:
+-/(this folder):
+	unitypackage with prefabs of avatars
+	report of the project
+-clothes:
+	clothes lib for makeHuman, including hairstyle for Olga
+-img:
+	original files from GIMP, used for creation of textures, maps etc.
+-makehuman-models:
+	models used in MakeHuman
+-MotionBuilderPreparation:
+	contains mhx files exported from makeHuman;
+	contains the blend file used to import the mhx's, fix some issues and export fbx files for models
+-OlgaBlender:
+	blend file used for creation of the clothes; all needed textures and maps
+-OlgaClothesMB:
+	fbx files containing the original models as exported from blender
+-OlgaHair:
+	originally used to model the hair, hair export to makeHuman eventually happened from OlgaBlender/Olga.blend
+-OlgaMotionBuilder:
+	contains the fbx files i worked on, character templates mentioned in the report,
+	and aditionally the models and motions that were later imported to unity3d
+-SpeakingInUnity:
+	the Viseme file exported from blender, but which could not successfully be applied in the game engine
