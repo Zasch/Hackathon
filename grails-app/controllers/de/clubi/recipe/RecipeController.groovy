@@ -3,7 +3,6 @@ package de.clubi.recipe
 import grails.plugins.springsecurity.Secured
 import org.springframework.dao.DataIntegrityViolationException
 
-@Secured(["ADMNIN_ROLE", "USER_ROLE"])
 class RecipeController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
@@ -32,7 +31,11 @@ class RecipeController {
         redirect(action: "show", id: recipeInstance.id)
     }
 
+@Secured(["ROLE_ADMIN", "ROLE_USER"])
     def show(Long id) {
+
+        println authenticatedUser
+
         def recipeInstance = Recipe.get(id)
         if (!recipeInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'recipe.label', default: 'Recipe'), id])

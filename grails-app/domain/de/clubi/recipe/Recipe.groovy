@@ -8,10 +8,10 @@ class Recipe {
     String subtitle
     String comment
     String preparation
-    Integer servings
+    Integer servings = 4
     Boolean alreadyMade
 
-    static hasMany = [tags: Tag, ingredients: Ingredient, picturs: Picture]
+    static hasMany = [tags: Tag, units: Unit, picturs: Picture]
     static belongsTo = [SecUser]
 
     static constraints = {
@@ -19,7 +19,7 @@ class Recipe {
         subtitle blank: true, nullable: true, maxSize: 1023
         preparation blank: false, nullable: false, maxSize: 100000
         comment blank: false, nullable: true, maxSize: 100000
-        servings range: 1..999, nullable: false
+        servings nullable: false
     }
 
     String toString(){

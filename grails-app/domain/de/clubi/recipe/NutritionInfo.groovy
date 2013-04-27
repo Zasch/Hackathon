@@ -4,14 +4,21 @@ class NutritionInfo {
 
     Date dateCreated
     Date lastUpdated
-    def calories
-    def carbohydrates
-    def fat
-    def protein
+    Float calories
+    Float carbohydrates
+    Float fat
+    Float protein
 
-    static belongsTo = [Ingredient]
+    static belongsTo = Ingredient
 
     static constraints = {
+        calories nullable: false
+        carbohydrates nullable: false
+        fat nullable: false
+        protein nullable: false
+    }
 
+    String toString() {
+        "Staub hat ${calories} Kalorien"
     }
 }
