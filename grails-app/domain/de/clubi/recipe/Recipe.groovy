@@ -11,7 +11,7 @@ class Recipe {
     Integer servings = 4
     Boolean alreadyMade
 
-    static hasMany = [tags: Tag, units: Unit, picturs: Picture]
+    static hasMany = [tags: Tag, units: Unit, pictures: Picture]
     static belongsTo = [SecUser]
 
     static constraints = {

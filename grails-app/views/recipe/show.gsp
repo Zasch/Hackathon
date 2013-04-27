@@ -95,12 +95,15 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${recipeInstance?.picturs}">
+				<g:if test="${recipeInstance?.pictures}">
 				<li class="fieldcontain">
-					<span id="picturs-label" class="property-label"><g:message code="recipe.picturs.label" default="Picturs" /></span>
+					<span id="pictures-label" class="property-label"><g:message code="recipe.pictures.label" default="Pictures" /></span>
 					
-						<g:each in="${recipeInstance.picturs}" var="p">
-						<span class="property-value" aria-labelledby="picturs-label"><g:link controller="picture" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></span>
+						<g:each in="${recipeInstance.pictures}" var="p">
+                            <img src="${createLinkTo(dir: "images/Rezeptbilder", file: p.fileName)}" alt="Bild" />
+						    %{--<span class="property-value" aria-labelledby="pictures-label">--}%
+                                %{--<g:link controller="picture" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link>--}%
+                            %{--</span>--}%
 						</g:each>
 					
 				</li>

@@ -4,7 +4,7 @@ class Picture {
 
     Date dateCreated
     Date lastUpdated
-    def fileName
+    String fileName
 
     static constraints = {
         fileName blank: false

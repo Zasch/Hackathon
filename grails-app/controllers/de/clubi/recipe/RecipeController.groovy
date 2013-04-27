@@ -1,6 +1,7 @@
 package de.clubi.recipe
 
-import grails.plugins.springsecurity.Secured
+import grails.converters.JSON
+import grails.converters.XML
 import org.springframework.dao.DataIntegrityViolationException
 
 class RecipeController {
@@ -21,6 +22,8 @@ class RecipeController {
     }
 
     def save() {
+        params.pictures = [new Picture(fileName: "bild.jpg"), new Picture(fileName: "bild1.gif")]
+
         def recipeInstance = new Recipe(params)
         if (!recipeInstance.save(flush: true)) {
             render(view: "create", model: [recipeInstance: recipeInstance])
@@ -31,12 +34,9 @@ class RecipeController {
         redirect(action: "show", id: recipeInstance.id)
     }
 
-@Secured(["ROLE_ADMIN", "ROLE_USER"])
     def show(Long id) {
-
-        println authenticatedUser
-
         def recipeInstance = Recipe.get(id)
+
         if (!recipeInstance) {
             flash.message = message(code: 'default.not.found.message', args: [message(code: 'recipe.label', default: 'Recipe'), id])
             redirect(action: "list")

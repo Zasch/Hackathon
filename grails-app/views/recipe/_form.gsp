@@ -50,12 +50,12 @@
 	<g:checkBox name="alreadyMade" value="${recipeInstance?.alreadyMade}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'picturs', 'error')} ">
-	<label for="picturs">
-		<g:message code="recipe.picturs.label" default="Picturs" />
+<div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'pictures', 'error')} ">
+	<label for="pictures">
+		<g:message code="recipe.pictures.label" default="Pictures" />
 		
 	</label>
-	<g:select name="picturs" from="${de.clubi.recipe.Picture.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.picturs*.id}" class="many-to-many"/>
+	<g:select name="pictures" from="${de.clubi.recipe.Picture.list()}" multiple="multiple" optionKey="id" size="5" value="${recipeInstance?.pictures*.id}" class="many-to-many"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'tags', 'error')} ">
