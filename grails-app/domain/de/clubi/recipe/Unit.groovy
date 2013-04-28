@@ -7,6 +7,11 @@ class Unit {
     Recipe recipe
     Ingredient ingredient
 
+	static searchable = {
+		root false
+		ingredient component: true
+	}
+	
     static constraints = {
         unit nullable: false, blank: false
     }

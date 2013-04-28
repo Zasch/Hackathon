@@ -1,5 +1,7 @@
 package de.clubi.recipe
 
+import java.awt.Component;
+
 class Recipe {
 
     Date lastUpdated
@@ -11,6 +13,11 @@ class Recipe {
     Integer servings = 4
     Boolean alreadyMade
 
+	static searchable = {
+		tags component: true
+		units component: true
+	}
+	
     static hasMany = [tags: Tag, units: Unit, pictures: Picture]
     static belongsTo = [SecUser]
 

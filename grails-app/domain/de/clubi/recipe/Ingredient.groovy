@@ -7,6 +7,10 @@ class Ingredient {
     String name
     NutritionInfo nutritionInfo
 
+	static searchable = {
+		root false
+	}
+	
     static hasMany = [pictures: Picture]
     static belongsTo = Unit
 

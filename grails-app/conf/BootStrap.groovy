@@ -1,6 +1,12 @@
+import sun.management.counter.Units;
+import de.clubi.recipe.Ingredient
+import de.clubi.recipe.NutritionInfo
+import de.clubi.recipe.Recipe;
 import de.clubi.recipe.SecRole
 import de.clubi.recipe.SecUser
 import de.clubi.recipe.SecUserSecRole
+import de.clubi.recipe.Tag
+import de.clubi.recipe.Unit
 
 class BootStrap {
 
@@ -24,6 +30,14 @@ class BootStrap {
         SecUserSecRole.create zasch, userRole, true
         SecUserSecRole.create zasch, adminRole, true
         SecUserSecRole.create user, userRole, true
+		
+		new Recipe(title: "Rezept#1", servings: 8, preparation: "fertig!").save(flush:true)
+		def nutrInf = new NutritionInfo(calories: 500, protein: 12, carbohydrates: 2, fat: 999).save(flush:true)
+		def ing = new Ingredient(name: "Zitrone", nutritionInfo: nutrInf).save(flush:true)
+		def thetag = new Tag(name: "lecker").save(flush:true)
+		def cakeRecipe = new Recipe(title: "Kuchen-Rezept", servings: 8, preparation: "fertig!", tags:[thetag]).save(flush:true)
+		def num = new Unit(ingredient: ing, measurement: 50, unit: "Messerspitzen", recipe: cakeRecipe).save(flush:true)
+		
     }
 
     def destroy = {
