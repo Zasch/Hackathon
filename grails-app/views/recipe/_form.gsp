@@ -23,7 +23,7 @@
 		<g:message code="recipe.preparation.label" default="Preparation" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textArea name="preparation" cols="40" rows="5" maxlength="100000" required="" value="${recipeInstance?.preparation}"/>
+    <richui:richTextEditor name="preparation" width="525"/>
 </div>
 
 <div class="fieldcontain ${hasErrors(bean: recipeInstance, field: 'comment', 'error')} ">

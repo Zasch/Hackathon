@@ -11,7 +11,11 @@ class Recipe {
     String comment
     String preparation
     Integer servings = 4
-    Boolean alreadyMade
+    Boolean alreadyMade =false
+    Boolean favorite = false
+    Boolean bookmark = false
+    Integer cookTime = 0
+    Integer prepTime = 0
 
 	static searchable = {
 		tags component: true
@@ -22,10 +26,10 @@ class Recipe {
     static belongsTo = [SecUser]
 
     static constraints = {
-        title blank: false, nullable: false, maxSize: 255
-        subtitle blank: true, nullable: true, maxSize: 1023
-        preparation blank: false, nullable: false, maxSize: 100000
-        comment blank: false, nullable: true, maxSize: 100000
+        title blank: false, nullable: false
+        subtitle blank: true, nullable: true
+        preparation blank: false, nullable: false
+        comment blank: false, nullable: true
         servings nullable: false
     }
 

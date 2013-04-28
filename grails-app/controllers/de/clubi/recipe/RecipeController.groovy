@@ -22,9 +22,11 @@ class RecipeController {
     }
 
     def save() {
+
         params.pictures = [new Picture(fileName: "bild.jpg"), new Picture(fileName: "bild1.gif")]
 
         def recipeInstance = new Recipe(params)
+
         if (!recipeInstance.save(flush: true)) {
             render(view: "create", model: [recipeInstance: recipeInstance])
             return
