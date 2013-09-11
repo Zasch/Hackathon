@@ -23,7 +23,7 @@
 			<table>
 				<thead>
 					<tr>
-                        <g:sortableColumn property="picture" title="${message(code: 'recipe.picture.label', default: 'Picture')}" />
+						<g:sortableColumn property="picture" title="${message(code: 'recipe.picture.label', default: 'Picture')}" />
 					
 						<g:sortableColumn property="title" title="${message(code: 'recipe.title.label', default: 'Title')}" />
 					
@@ -43,7 +43,7 @@
 				<g:each in="${recipeInstanceList}" status="i" var="recipeInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 
-                        <td><img src="${createLinkTo(dir: "images/Rezeptbilder", file: recipeInstance.pictures.first().fileName)}" alt="bild" width="150"/></td>
+						 <td><img src="${createLinkTo(dir: "images/Rezeptbilder", file: recipeInstance?.pictures?.first()?.fileName)}" alt="bild" width="150"/></td>
                         %{--<td></td>--}%
 					
 						<td><g:link action="show" id="${recipeInstance.id}">${fieldValue(bean: recipeInstance, field: "title")}</g:link></td>
